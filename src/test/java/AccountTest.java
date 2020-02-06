@@ -15,10 +15,31 @@ public class AccountTest {
         coin1 = new Coin(CoinType.TENPENCE);
         coin2 = new Coin(CoinType.FIFTYPENCE);
     }
-    
+
     @Test
     public void addCoinToAccount(){
         account.addCoin(coin1);
         assertEquals(1, account.countCoins());
     }
+
+    @Test
+    public void removeCoinFromCoins(){
+        account.addCoin(coin1);
+        account.removeCoin(0);
+        assertEquals(0, account.countCoins());
+    }
+
+    @Test
+    public void canGetOverallValueOfCoins(){
+        account.addCoin(coin1);
+        account.addCoin(coin2);
+        account.addCoin(coin2);
+        assertEquals(1.10, account.getOverallValueOfCoins(), 0.00);
+    }
+
+    @Test
+    public void getQuanity(){
+        account.getCoinQuantity();
+    }
+
 }

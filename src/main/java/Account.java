@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Account {
 
@@ -25,6 +26,27 @@ public class Account {
     }
 
 
+    public double getOverallValueOfCoins() {
+        double value = 0;
+        for(Coin coin : coins){
+            value +=coin.getCoinValue();
+        }
+        return value;
+    }
 
+    public HashMap<String , Integer> getCoinQuantity(){
+            HashMap<String , Integer> listOfCoins = new HashMap<String, Integer>();
+            for(CoinType cointype : CoinType.values()) {
+                int count = 0;
+                for (Coin coin : this.coins) {
 
+                    if (coin.getCoin().name() == cointype.name()) {
+                        count += 1;
+                    }
+
+                }
+                listOfCoins.put(cointype.name(), count);
+            }
+            return listOfCoins;
+    }
 }
