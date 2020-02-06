@@ -15,4 +15,5 @@ public enum CoinType {
     public double getValue() {
         return value;
     }
+
 }
