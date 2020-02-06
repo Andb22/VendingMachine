@@ -1,11 +1,16 @@
 public class Coin {
 
-    private int value;
+    private CoinType coin;
 
-    public Coin(int value) {
-        this.value = value;
+    public Coin(CoinType coin) {
+        this.coin = coin;
     }
 
+    public CoinType getCoin() {
+        return coin;
+    }
 
-
+    public double getCoinValue(){
+        return this.coin.getValue();
+    }
 }
