@@ -27,4 +27,12 @@ public class Customer {
     public void addProduct(Product product) {
         this.pocket.add(product);
     }
+
+    public Coin removeCoinWallet(int index){
+        return this.wallet.removeCoin(index);
+    }
+
+    public void addCoin(Coin coin) {
+        this.wallet.addCoin(coin);
+    }
 }

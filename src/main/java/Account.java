@@ -21,8 +21,8 @@ public class Account {
         this.coins.add(coin);
     }
 
-    public void removeCoin(int index){
-        this.coins.remove(index);
+    public Coin removeCoin(int index){
+        return this.coins.remove(index);
     }
 
 
@@ -46,5 +46,9 @@ public class Account {
                 listOfCoins.put(cointype.name(), count);
             }
             return listOfCoins;
+    }
+
+    public void clear() {
+        this.coins.clear();
     }
 }
