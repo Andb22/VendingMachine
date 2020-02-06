@@ -39,11 +39,9 @@ public class Account {
             for(CoinType cointype : CoinType.values()) {
                 int count = 0;
                 for (Coin coin : this.coins) {
-
                     if (coin.getCoin().name() == cointype.name()) {
                         count += 1;
                     }
-
                 }
                 listOfCoins.put(cointype.name(), count);
             }

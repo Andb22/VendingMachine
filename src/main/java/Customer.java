@@ -24,4 +24,7 @@ public class Customer {
         return pocket;
     }
 
+    public void addProduct(Product product) {
+        this.pocket.add(product);
+    }
 }

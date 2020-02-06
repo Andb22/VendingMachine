@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertEquals;
 
 public class AccountTest {
@@ -38,8 +40,13 @@ public class AccountTest {
     }
 
     @Test
-    public void getQuanity(){
-        account.getCoinQuantity();
+    public void getQuantity(){
+        account.addCoin(coin1);
+        account.addCoin(coin2);
+        account.addCoin(coin2);
+        HashMap <String, Integer> result = account.getCoinQuantity();
+        assertEquals(1, (int)result.get("TENPENCE"));
+        assertEquals(2,(int)result.get("FIFTYPENCE"));
     }
 
 }
